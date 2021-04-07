@@ -24,7 +24,11 @@
 - 결과: RxSwift에서 just와 거의 같은 역할을 수행한다.
 이번에 처음으로 swift에서 기본으로 제공해주는 Combine 라이브러리를 써봤다. Rx형태의 기능을 제공해 주는 것 같다.
 아직 함수형 프로그래밍을 잘 모르지만, 아는 RxSwift를 기준으로 보면 비슷한 것이 많다
+- AnyPublisher가 Observable 혹은 PublishSubject와 흡사하다
+    - .receive 연산자?는 observeOn 혹은 subscribeOn와 흡사하다
+    - .sink 연산자는 subscribe 혹은 drive 혹은 bind오 흡사하다.
+    - Just는 Observable.just와 흡사하다.
 
-- AnyPublisher가 Observable 혹은 PublishSubject와 흡사하고
-- .receive 연산자?는 observeOn 혹은 subscribeOn와 흡사하다
-- .sink 연산자는 subscribe 혹은 ㅠ
+    # Rx복습
+    - subscribeOn은 Observable이 실행될 스케줄러를 지정한다.(위치 상관없음)
+    - observeOn은 이어지는 연산자가 실행될 스케줄러를 지정한다(스케줄러를 변경하지 않으면 스케줄러는 바뀌지 않는다)
