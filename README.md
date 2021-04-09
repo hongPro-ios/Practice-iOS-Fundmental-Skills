@@ -34,8 +34,45 @@
     - observeOn은 이어지는 연산자가 실행될 스케줄러를 지정한다(스케줄러를 변경하지 않으면 스케줄러는 바뀌지 않는다)
 
 ## RingAnimation
-학인하고자 한 부분
+확인하고자 한 부분
 1. 그림은 어떻게 그리는거지?
 - 결과: CAShapeLayer와 UIBezierPath이용해서 그림을 그릴 수 있다.. 아직 원밖에 안해봐서 원밖에 모르겠지만 다른형태도 이걸로 그릴 수 있는 것 같다.
 2. 애니메이션은 어떻게 동작하는거지?
 - 결과: CABasicAnimation이용해서 애니메이션을 돌리는데... 아직 잘 모르겠다.
+
+
+## TableViewMoveAndDeleteCell
+확인하고자 한 부분
+1. TableView Cell 이동
+- 이동에 사용되는 TableViewDelegate func은 2개이다.
+`func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {}`
+`func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {}`
+tableView의 isEditing 속성이 true인 상태에서 조작이 가능하다. 
+```swift
+func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+    return true
+}
+
+func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+    models.swapAt(sourceIndexPath.row, destinationIndexPath.row)
+}
+```
+
+2. TableView Cell 삭제
+- 삭제에 사용되는 TableViewDelegate func은 2개이다.
+`func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {}`
+`func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {}`
+중요한 포인트!!! table이 갱신되기 전에  cell뿐만 아니라 실제 모델 데이터를 같이 삭제 해줘야 crash가 안난다.
+```swift
+func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+    return .delete
+}
+
+func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    if editingStyle  == .delete {
+        tableView.beginUpdates()
+        models.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .fade)
+        tableView.endUpdates()
+    }
+}```
