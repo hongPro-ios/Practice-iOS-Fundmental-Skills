@@ -75,4 +75,12 @@ func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.Ed
         tableView.deleteRows(at: [indexPath], with: .fade)
         tableView.endUpdates()
     }
-}```
+}
+```
+
+## TableViewPagenation
+확인하고자 한 부분
+1. 일반적인 페이지내이션 구성은 어떻게 이뤄져 있을까
+- 연속 fetching이 안되도록 플레그 걸어 두고 `func scrollViewDidScroll(_ scrollView: UIScrollView)` 스크롤 델리게이트로 위치 감지 및 fetching 실시
+- scrollView.frame.size.height  가 화면에 표시되는 테이블사이즈(일반적인 화면사이즈)
+- tableView.contentSize.height 가 스크롤로 숨겨져있는 테이블총 사이즈가 되니 혼동하지 않도록!
