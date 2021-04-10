@@ -24,7 +24,63 @@
 - 결과: RxSwift에서 just와 거의 같은 역할을 수행한다.
 이번에 처음으로 swift에서 기본으로 제공해주는 Combine 라이브러리를 써봤다. Rx형태의 기능을 제공해 주는 것 같다.
 아직 함수형 프로그래밍을 잘 모르지만, 아는 RxSwift를 기준으로 보면 비슷한 것이 많다
+- AnyPublisher가 Observable 혹은 PublishSubject와 흡사하다
+    - .receive 연산자?는 observeOn 혹은 subscribeOn와 흡사하다
+    - .sink 연산자는 subscribe 혹은 drive 혹은 bind오 흡사하다.
+    - Just는 Observable.just와 흡사하다.
 
-- AnyPublisher가 Observable 혹은 PublishSubject와 흡사하고
-- .receive 연산자?는 observeOn 혹은 subscribeOn와 흡사하다
-- .sink 연산자는 subscribe 혹은 ㅠ
+    # Rx복습
+    - subscribeOn은 Observable이 실행될 스케줄러를 지정한다.(위치 상관없음)
+    - observeOn은 이어지는 연산자가 실행될 스케줄러를 지정한다(스케줄러를 변경하지 않으면 스케줄러는 바뀌지 않는다)
+
+## RingAnimation
+확인하고자 한 부분
+1. 그림은 어떻게 그리는거지?
+- 결과: CAShapeLayer와 UIBezierPath이용해서 그림을 그릴 수 있다.. 아직 원밖에 안해봐서 원밖에 모르겠지만 다른형태도 이걸로 그릴 수 있는 것 같다.
+2. 애니메이션은 어떻게 동작하는거지?
+- 결과: CABasicAnimation이용해서 애니메이션을 돌리는데... 아직 잘 모르겠다.
+
+
+## TableViewMoveAndDeleteCell
+확인하고자 한 부분
+1. TableView Cell 이동
+- 이동에 사용되는 TableViewDelegate func은 2개이다.
+`func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {}`
+`func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {}`
+tableView의 isEditing 속성이 true인 상태에서 조작이 가능하다. 
+```swift
+func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+    return true
+}
+
+func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+    models.swapAt(sourceIndexPath.row, destinationIndexPath.row)
+}
+```
+
+2. TableView Cell 삭제
+- 삭제에 사용되는 TableViewDelegate func은 2개이다.
+`func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {}`
+`func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {}`
+중요한 포인트!!! table이 갱신되기 전에  cell뿐만 아니라 실제 모델 데이터를 같이 삭제 해줘야 crash가 안난다.
+```swift
+func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+    return .delete
+}
+
+func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    if editingStyle  == .delete {
+        tableView.beginUpdates()
+        models.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .fade)
+        tableView.endUpdates()
+    }
+}
+```
+
+## TableViewPagenation
+확인하고자 한 부분
+1. 일반적인 페이지내이션 구성은 어떻게 이뤄져 있을까
+- 연속 fetching이 안되도록 플레그 걸어 두고 `func scrollViewDidScroll(_ scrollView: UIScrollView)` 스크롤 델리게이트로 위치 감지 및 fetching 실시
+- scrollView.frame.size.height  가 화면에 표시되는 테이블사이즈(일반적인 화면사이즈)
+- tableView.contentSize.height 가 스크롤로 숨겨져있는 테이블총 사이즈가 되니 혼동하지 않도록!

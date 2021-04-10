@@ -1,0 +1,363 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3DF461E1261F462200BEDCDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF461E0261F462200BEDCDE /* AppDelegate.swift */; };
+		3DF461E3261F462200BEDCDE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF461E2261F462200BEDCDE /* SceneDelegate.swift */; };
+		3DF461E5261F462200BEDCDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF461E4261F462200BEDCDE /* ViewController.swift */; };
+		3DF461E8261F462200BEDCDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DF461E6261F462200BEDCDE /* Main.storyboard */; };
+		3DF461EB261F462200BEDCDE /* RingAnimation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3DF461E9261F462200BEDCDE /* RingAnimation.xcdatamodeld */; };
+		3DF461ED261F462200BEDCDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DF461EC261F462200BEDCDE /* Assets.xcassets */; };
+		3DF461F0261F462200BEDCDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DF461EE261F462200BEDCDE /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3DF461DD261F462200BEDCDE /* RingAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RingAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DF461E0261F462200BEDCDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3DF461E2261F462200BEDCDE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3DF461E4261F462200BEDCDE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3DF461E7261F462200BEDCDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3DF461EA261F462200BEDCDE /* RingAnimation.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RingAnimation.xcdatamodel; sourceTree = "<group>"; };
+		3DF461EC261F462200BEDCDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3DF461EF261F462200BEDCDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3DF461F1261F462200BEDCDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3DF461DA261F462200BEDCDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3DF461D4261F462200BEDCDE = {
+			isa = PBXGroup;
+			children = (
+				3DF461DF261F462200BEDCDE /* RingAnimation */,
+				3DF461DE261F462200BEDCDE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3DF461DE261F462200BEDCDE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3DF461DD261F462200BEDCDE /* RingAnimation.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3DF461DF261F462200BEDCDE /* RingAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				3DF461E0261F462200BEDCDE /* AppDelegate.swift */,
+				3DF461E2261F462200BEDCDE /* SceneDelegate.swift */,
+				3DF461E4261F462200BEDCDE /* ViewController.swift */,
+				3DF461E6261F462200BEDCDE /* Main.storyboard */,
+				3DF461EC261F462200BEDCDE /* Assets.xcassets */,
+				3DF461EE261F462200BEDCDE /* LaunchScreen.storyboard */,
+				3DF461F1261F462200BEDCDE /* Info.plist */,
+				3DF461E9261F462200BEDCDE /* RingAnimation.xcdatamodeld */,
+			);
+			path = RingAnimation;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3DF461DC261F462200BEDCDE /* RingAnimation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DF461F4261F462200BEDCDE /* Build configuration list for PBXNativeTarget "RingAnimation" */;
+			buildPhases = (
+				3DF461D9261F462200BEDCDE /* Sources */,
+				3DF461DA261F462200BEDCDE /* Frameworks */,
+				3DF461DB261F462200BEDCDE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RingAnimation;
+			productName = RingAnimation;
+			productReference = 3DF461DD261F462200BEDCDE /* RingAnimation.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3DF461D5261F462200BEDCDE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					3DF461DC261F462200BEDCDE = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 3DF461D8261F462200BEDCDE /* Build configuration list for PBXProject "RingAnimation" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3DF461D4261F462200BEDCDE;
+			productRefGroup = 3DF461DE261F462200BEDCDE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3DF461DC261F462200BEDCDE /* RingAnimation */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3DF461DB261F462200BEDCDE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DF461F0261F462200BEDCDE /* LaunchScreen.storyboard in Resources */,
+				3DF461ED261F462200BEDCDE /* Assets.xcassets in Resources */,
+				3DF461E8261F462200BEDCDE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3DF461D9261F462200BEDCDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DF461E5261F462200BEDCDE /* ViewController.swift in Sources */,
+				3DF461E1261F462200BEDCDE /* AppDelegate.swift in Sources */,
+				3DF461EB261F462200BEDCDE /* RingAnimation.xcdatamodeld in Sources */,
+				3DF461E3261F462200BEDCDE /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3DF461E6261F462200BEDCDE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3DF461E7261F462200BEDCDE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3DF461EE261F462200BEDCDE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3DF461EF261F462200BEDCDE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3DF461F2261F462200BEDCDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3DF461F3261F462200BEDCDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3DF461F5261F462200BEDCDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YUHDTGAY33;
+				INFOPLIST_FILE = RingAnimation/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = hongjeongseob.RingAnimation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3DF461F6261F462200BEDCDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YUHDTGAY33;
+				INFOPLIST_FILE = RingAnimation/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = hongjeongseob.RingAnimation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3DF461D8261F462200BEDCDE /* Build configuration list for PBXProject "RingAnimation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DF461F2261F462200BEDCDE /* Debug */,
+				3DF461F3261F462200BEDCDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DF461F4261F462200BEDCDE /* Build configuration list for PBXNativeTarget "RingAnimation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DF461F5261F462200BEDCDE /* Debug */,
+				3DF461F6261F462200BEDCDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3DF461E9261F462200BEDCDE /* RingAnimation.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3DF461EA261F462200BEDCDE /* RingAnimation.xcdatamodel */,
+			);
+			currentVersion = 3DF461EA261F462200BEDCDE /* RingAnimation.xcdatamodel */;
+			path = RingAnimation.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 3DF461D5261F462200BEDCDE /* Project object */;
+}
