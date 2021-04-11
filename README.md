@@ -84,3 +84,11 @@ func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.Ed
 - 연속 fetching이 안되도록 플레그 걸어 두고 `func scrollViewDidScroll(_ scrollView: UIScrollView)` 스크롤 델리게이트로 위치 감지 및 fetching 실시
 - scrollView.frame.size.height  가 화면에 표시되는 테이블사이즈(일반적인 화면사이즈)
 - tableView.contentSize.height 가 스크롤로 숨겨져있는 테이블총 사이즈가 되니 혼동하지 않도록!
+
+## PassData
+확인하고자 한 부분
+1. 일반적인 화면간 데이터를 주고받는 방법
+-   1. 초기화시 건내는 방법,  2. Closure을 활용하는 방법, 3. NotificationCenter를 이용하는 방법이있다.
+- 초기화시 거낸는 방법은 일방적인 전달을 담당할 때 사용(ex 띄울 화면에 필요한 정보 넘기기)
+- Closure을 사용하는 방법은 화면간 1:1매칭 이용할 때사용(ex 현 textField를 터치하면 팝업띄어서  입력한 내용 textField에 넣기)
+- NotificationCenter은 방법을 전 화면에서 접근 가능한 데이터 저장소를 따로 두고 거기다가 데이터를 넣고 접근하는 방식으로써 어떤화면에서든 데이터 접근이 가능하다.
