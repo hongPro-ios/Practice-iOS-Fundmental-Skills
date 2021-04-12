@@ -92,3 +92,13 @@ func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.Ed
 - 초기화시 거낸는 방법은 일방적인 전달을 담당할 때 사용(ex 띄울 화면에 필요한 정보 넘기기)
 - Closure을 사용하는 방법은 화면간 1:1매칭 이용할 때사용(ex 현 textField를 터치하면 팝업띄어서  입력한 내용 textField에 넣기)
 - NotificationCenter은 방법을 전 화면에서 접근 가능한 데이터 저장소를 따로 두고 거기다가 데이터를 넣고 접근하는 방식으로써 어떤화면에서든 데이터 접근이 가능하다.
+
+## VIPER : 아키텍처 패턴
+확인하고자 한 부분
+1. 어떻게 이루어져있고 어떤 역할을 하는가.
+- V: View: Presenter의 요청대로 디스플레이하고, 사용자 입력을 Presenter로 보내는 작업을 합니다.
+- I: Interactor: Entity조작 및 백엔드 작업
+- P: Presenter: Interactor에서 데이터 취득, View에 데이터 준비 및 타이밍 제어, Router 타이밍 제어
+- E: Entity: 모델객체
+- R: Router: 화면전환
+- VIPER설명: https://nightohl.tistory.com/entry/iOS-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%ED%8C%A8%ED%84%B4-VIPER
