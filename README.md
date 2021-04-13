@@ -102,3 +102,14 @@ func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.Ed
 - E: Entity: 모델객체
 - R: Router: 화면전환
 - VIPER설명: https://nightohl.tistory.com/entry/iOS-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%ED%8C%A8%ED%84%B4-VIPER
+
+## UnitXCTest
+확인하고자 한 부분
+1. xcode에서 유닛테스트 어떻게 하는거지?
+
+- 유닛테스트 단축기()
+    1. 빌드런 : 커맨드 + U
+    2. 빌드: 쉬프트 + 커맨드 + U
+    3. 런: 옵션 + 커맨드 + 
+    4. 선택런: 컨 + 옵 + 커 + U
+    ref: https://swiftsenpai.com/xcode/xcode-unit-test-shortcuts/
