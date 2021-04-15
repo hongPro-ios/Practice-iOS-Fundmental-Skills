@@ -113,3 +113,15 @@ func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.Ed
     3. 런: 옵션 + 커맨드 + 
     4. 선택런: 컨 + 옵 + 커 + U
     ref: https://swiftsenpai.com/xcode/xcode-unit-test-shortcuts/
+
+## AnimationPractice
+확인하고자 한 부분
+1. 애니메이션 어떻게 설정하는거지????
+- 이번에 알아본 애니매이션은 아주 기초적인 그리고 제공되는 zoom rotate random 애니메이션이였다.
+- cocoapod으로 ViewAnimator를 받아서 이요하긴 했지만 내부 자체가 매우 간단한 코드로 이뤄져있다.
+- 기본제공 애니메이션은 어떤것이 있는지 조금더 알아보고 커스텀 애니메이션에 관해 알아봐야한다.
+
+## FileManage
+확인하고자 한 부부
+1. FileManage는 무슨기능을 제공해주지??
+- 이름과 같이 folder, file을 CRUD해주는 기능을 제공한다.  디바이스에 로그 남길 때 유용하게 쓰이겠다.
