@@ -121,3 +121,7 @@ func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.Ed
 - cocoapod으로 ViewAnimator를 받아서 이요하긴 했지만 내부 자체가 매우 간단한 코드로 이뤄져있다.
 - 기본제공 애니메이션은 어떤것이 있는지 조금더 알아보고 커스텀 애니메이션에 관해 알아봐야한다.
 
+## FileManage
+확인하고자 한 부부
+1. FileManage는 무슨기능을 제공해주지??
+- 이름과 같이 folder, file을 CRUD해주는 기능을 제공한다.  디바이스에 로그 남길 때 유용하게 쓰이겠다.
