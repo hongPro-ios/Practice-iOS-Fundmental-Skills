@@ -125,3 +125,8 @@ func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.Ed
 확인하고자 한 부부
 1. FileManage는 무슨기능을 제공해주지??
 - 이름과 같이 folder, file을 CRUD해주는 기능을 제공한다.  디바이스에 로그 남길 때 유용하게 쓰이겠다.
+
+## Sidebar
+확인하고자 한 부분
+1. 사이드바 어떻게 만들어내는거지?
+- controllerView를 부모자식으로 상속 연결해놓고 애니매니션 이용한다. addChild랑 
