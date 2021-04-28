@@ -165,3 +165,13 @@ func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPat
     return [deleteAction, favoriteAction, muteAction]
 }
 ```
+
+## MVVMBindingsPattern
+확인하고자 한 부분
+1. RxSwift를 사용하지 않고 순수하게 Observable와 bind를 정의해서 사용하는 방법 알아보기
+- 기본이론은 단순하다. Observable이라는 클래스에 데이터를 담고, 데이터가 갱신될 때 모델의 bind의 인수인 클로져를 실행시켜 주는것
+
+
+## UnitTest 재조사
+확인하고자 한 부분
+1. swift에서 unit test작성절차 및 실제 적용 테스트
