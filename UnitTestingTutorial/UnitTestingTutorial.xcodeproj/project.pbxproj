@@ -15,6 +15,10 @@
 		3D1884BE263840D400A39BEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D1884BC263840D400A39BEF /* LaunchScreen.storyboard */; };
 		3D1884C7263840E100A39BEF /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1884C6263840E100A39BEF /* Car.swift */; };
 		3D1884D02638418100A39BEF /* CarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1884CF2638418100A39BEF /* CarTests.swift */; };
+		3D1884F22638500D00A39BEF /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1884F12638500D00A39BEF /* School.swift */; };
+		3D1884FC263852D400A39BEF /* StudentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1884FB263852D400A39BEF /* StudentTests.swift */; };
+		3D6D503F2639975E009F36EA /* SchoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D503E2639975E009F36EA /* SchoolTests.swift */; };
+		3D6D504326399DAC009F36EA /* TestSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D504226399DAC009F36EA /* TestSample.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,10 @@
 		3D1884CD2638418100A39BEF /* UnitTestingTutorialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTestingTutorialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D1884CF2638418100A39BEF /* CarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTests.swift; sourceTree = "<group>"; };
 		3D1884D12638418100A39BEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D1884F12638500D00A39BEF /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
+		3D1884FB263852D400A39BEF /* StudentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTests.swift; sourceTree = "<group>"; };
+		3D6D503E2639975E009F36EA /* SchoolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTests.swift; sourceTree = "<group>"; };
+		3D6D504226399DAC009F36EA /* TestSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSample.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +97,7 @@
 				3D1884BC263840D400A39BEF /* LaunchScreen.storyboard */,
 				3D1884BF263840D400A39BEF /* Info.plist */,
 				3D1884C6263840E100A39BEF /* Car.swift */,
+				3D1884F12638500D00A39BEF /* School.swift */,
 			);
 			path = UnitTestingTutorial;
 			sourceTree = "<group>";
@@ -96,6 +105,9 @@
 		3D1884CE2638418100A39BEF /* UnitTestingTutorialTests */ = {
 			isa = PBXGroup;
 			children = (
+				3D6D504226399DAC009F36EA /* TestSample.swift */,
+				3D6D503E2639975E009F36EA /* SchoolTests.swift */,
+				3D1884FB263852D400A39BEF /* StudentTests.swift */,
 				3D1884CF2638418100A39BEF /* CarTests.swift */,
 				3D1884D12638418100A39BEF /* Info.plist */,
 			);
@@ -205,6 +217,7 @@
 				3D1884B6263840D400A39BEF /* ViewController.swift in Sources */,
 				3D1884B2263840D400A39BEF /* AppDelegate.swift in Sources */,
 				3D1884C7263840E100A39BEF /* Car.swift in Sources */,
+				3D1884F22638500D00A39BEF /* School.swift in Sources */,
 				3D1884B4263840D400A39BEF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,6 +227,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D1884D02638418100A39BEF /* CarTests.swift in Sources */,
+				3D6D504326399DAC009F36EA /* TestSample.swift in Sources */,
+				3D1884FC263852D400A39BEF /* StudentTests.swift in Sources */,
+				3D6D503F2639975E009F36EA /* SchoolTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
