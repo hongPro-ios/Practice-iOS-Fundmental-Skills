@@ -1,0 +1,38 @@
+{
+  "configurations" : [
+    {
+      "id" : "41A98478-2ED3-4E43-8C20-CE4B0D5937DE",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    },
+    {
+      "id" : "CA58565B-783E-47EC-B76B-C52B296E38CA",
+      "name" : "US English",
+      "options" : {
+
+      }
+    },
+    {
+      "id" : "62070C25-41CC-4E41-AF11-F9D1349151BA",
+      "name" : "Cerman",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:UnitTestingTutorial.xcodeproj",
+        "identifier" : "3D1884CC2638418100A39BEF",
+        "name" : "UnitTestingTutorialTests"
+      }
+    }
+  ],
+  "version" : 1
+}
