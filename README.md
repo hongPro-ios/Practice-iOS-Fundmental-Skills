@@ -175,3 +175,41 @@ func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPat
 ## UnitTest 재조사
 확인하고자 한 부분
 1. swift에서 unit test작성절차 및 실제 적용 테스트
+2. 비동기 코드 테스트(Unit Testing in Swift: Asynchronous Expectations) : https://medium.com/swlh/unit-testing-in-swift-asynchronous-expectations-376e1427aeb9
+  - 몇가지 캐이스가 있다. completion closure을 가지고 있는경우
+     핵심은 핸들러의 경우 다른 쓰레드에서 실행되기 때문에 핸들러에 XCTAssert를 넣어도 씹힌다. 그래서 기다리게 만드는 method를 이용하는것
+     expectation과 waitForExpectations을 이용한다. 사용방법은 아래의 코드 참고
+     ```swift
+     func testRetrieveAlumni() {
+         let school = School(students: [])
+         var result: Result<[Student], NetworkError>?
+             
+         // Create the expectation.
+         let expectation = self.expectation(description: "Waiting for the retrieveAlumni call to complete.")
+             
+         // Perform the asynchronous call.
+         school.retrieveAlumni { response in
+             // Save the response.
+             result = response
+             // Fulfill the expectation.
+             expectation.fulfill()
+         }
+             
+         // Wait for expectations for a maximum of 2 seconds.
+         waitForExpectations(timeout: 2) { error in
+             XCTAssertNil(error)
+             switch result {
+             case .success(let alumni):
+                 XCTAssertEqual(alumni.count, 2)
+             case .failure,
+                  .none:
+                 XCTFail()
+             }
+         }
+     }
+     ```
+  - 리턴이 없는 function 테스트 (FAF)
+    이런 함수를 fire and forget이라고 한다. 이 경우 async로 작동되는 쓰레드를 통일시켜서 테스트 하는 방법을 취한다. 결과적으로 절차적 코드로 바꿔서 테스트 한다는뜻.
+    하지만 이렇게 하면 기존 코드에 thread  injection인수를 넣어줘야 하여 본 코드의 수정이 들어간다.
+    이런 방법도 있다는걸 알아 두자
+  - 이 후 mock으로 의존성 끊어내는 방법이 나오니 그 방법을 활용하도록!
