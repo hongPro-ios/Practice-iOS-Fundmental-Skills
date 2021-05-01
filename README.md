@@ -41,7 +41,8 @@
 - 결과: CABasicAnimation이용해서 애니메이션을 돌리는데... 아직 잘 모르겠다.
 
 
-## TableViewMoveAndDeleteCell
+## TableViewPractice
+### TableViewMoveAndDeleteCell
 확인하고자 한 부분
 1. TableView Cell 이동
 - 이동에 사용되는 TableViewDelegate func은 2개이다.
@@ -78,12 +79,46 @@ func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.Ed
 }
 ```
 
-## TableViewPagenation
+### TableViewPagenation
 확인하고자 한 부분
 1. 일반적인 페이지내이션 구성은 어떻게 이뤄져 있을까
 - 연속 fetching이 안되도록 플레그 걸어 두고 `func scrollViewDidScroll(_ scrollView: UIScrollView)` 스크롤 델리게이트로 위치 감지 및 fetching 실시
 - scrollView.frame.size.height  가 화면에 표시되는 테이블사이즈(일반적인 화면사이즈)
 - tableView.contentSize.height 가 스크롤로 숨겨져있는 테이블총 사이즈가 되니 혼동하지 않도록!
+
+##v TableViewSwipeActions
+확인하고자 한 부분
+1. 커스텀으로 Action을 더 추가시키고 싶을 때 어떻게 조치하는가?
+- `func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {`
+- `func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {`
+- 을 이용하는 것은 TableViewMoveAndDeleteCell와 같다. 여기에 추가할 액션을 더 넣어주면 된다. 
+```swift
+func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+    let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { _, indexPath in
+        self.users.remove(at: indexPath.row)
+        self.tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
+    
+    let user = users[indexPath.row]
+    let favoriteActionTitle = user.isFavorite ? "Unfavorite" : "Favorite"
+    let muteActionTitle = user.isMuted ? "Unmute" : "Mute"
+    
+    let favoriteAction = UITableViewRowAction(style: .normal, title: favoriteActionTitle) { _, indexPath in
+        self.users[indexPath.row].isFavorite.toggle()
+        self.tableView.reloadRows(at: [indexPath], with: .automatic)
+    }
+    
+    let muteAction = UITableViewRowAction(style: .normal, title: muteActionTitle) { _, indexPath in
+        self.users[indexPath.row].isMuted.toggle()
+        self.tableView.reloadRows(at: [indexPath], with: .bottom)
+    }
+    
+    favoriteAction.backgroundColor = .systemBlue
+    muteAction.backgroundColor = .orange
+    
+    return [deleteAction, favoriteAction, muteAction]
+}
+```
 
 ## PassData
 확인하고자 한 부분
@@ -131,40 +166,6 @@ func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.Ed
 1. 사이드바 어떻게 만들어내는거지?
 - controllerView를 부모자식으로 상속 연결해놓고 애니매니션 이용한다. addChild랑 
 
-
-## TableViewSwipeActions
-확인하고자 한 부분
-1. 커스텀으로 Action을 더 추가시키고 싶을 때 어떻게 조치하는가?
-- `func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {`
-- `func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {`
-- 을 이용하는 것은 TableViewMoveAndDeleteCell와 같다. 여기에 추가할 액션을 더 넣어주면 된다. 
-```swift
-func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-    let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { _, indexPath in
-        self.users.remove(at: indexPath.row)
-        self.tableView.deleteRows(at: [indexPath], with: .automatic)
-    }
-    
-    let user = users[indexPath.row]
-    let favoriteActionTitle = user.isFavorite ? "Unfavorite" : "Favorite"
-    let muteActionTitle = user.isMuted ? "Unmute" : "Mute"
-    
-    let favoriteAction = UITableViewRowAction(style: .normal, title: favoriteActionTitle) { _, indexPath in
-        self.users[indexPath.row].isFavorite.toggle()
-        self.tableView.reloadRows(at: [indexPath], with: .automatic)
-    }
-    
-    let muteAction = UITableViewRowAction(style: .normal, title: muteActionTitle) { _, indexPath in
-        self.users[indexPath.row].isMuted.toggle()
-        self.tableView.reloadRows(at: [indexPath], with: .bottom)
-    }
-    
-    favoriteAction.backgroundColor = .systemBlue
-    muteAction.backgroundColor = .orange
-    
-    return [deleteAction, favoriteAction, muteAction]
-}
-```
 
 ## MVVMBindingsPattern
 확인하고자 한 부분
