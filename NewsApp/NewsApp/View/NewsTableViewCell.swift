@@ -7,23 +7,6 @@
 
 import UIKit
 
-class NewTableViewCellViewModel {
-    let title: String
-    let subtitle: String
-    let imageURL: URL?
-    var imageData: Data? = nil
-    
-    init(
-        title: String,
-        subtitle: String,
-        imageURL: URL?) {
-        self.title = title
-        self.subtitle = subtitle
-        self.imageURL = imageURL
-        
-    }
-}
-
 class NewsTableViewCell: UITableViewCell {
     
     static let identifier = "NewsTableViewCell"
@@ -79,8 +62,6 @@ class NewsTableViewCell: UITableViewCell {
             y: 5, 
             width: 140,
             height: contentView.frame.size.height - 10)
-        
-        
     }
     
     override func prepareForReuse() {
@@ -93,16 +74,15 @@ class NewsTableViewCell: UITableViewCell {
     func configure(with viewModel: NewTableViewCellViewModel) {
         newsTitleLabel.text = viewModel.title
         subtitleLabel.text = viewModel.subtitle
-        
-        // Image
+        setNewsImage(with: viewModel)
+    }
+    
+    private func setNewsImage(with viewModel: NewTableViewCellViewModel) {
         if let data = viewModel.imageData {
             newsImageView.image = UIImage(data: data)
         } else if let url = viewModel.imageURL{
-            //fetch
             URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
-                guard let data = data, error == nil else {
-                    return
-                }
+                guard let data = data, error == nil else { return }
                 viewModel.imageData = data
                 DispatchQueue.main.sync {
                     self?.newsImageView.image = UIImage(data: data)
@@ -110,5 +90,4 @@ class NewsTableViewCell: UITableViewCell {
             }.resume()
         }
     }
-    
 }
