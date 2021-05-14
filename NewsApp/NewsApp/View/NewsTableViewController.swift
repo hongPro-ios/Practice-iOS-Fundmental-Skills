@@ -8,11 +8,12 @@
 import UIKit
 import SafariServices
 
-class NewTableViewController: UIViewController {
+class NewsTableViewController: UIViewController {
     
     struct Constants {
         static let cellHeight: CGFloat = 150
         static let title = "News"
+        static let defaultDescription = "No Description"
     }
     
     private let tableView: UITableView = {
@@ -24,6 +25,7 @@ class NewTableViewController: UIViewController {
         return tableView
     }()
     
+    private let searchController = UISearchController(searchResultsController: nil)
     private var viewModels = [NewTableViewCellViewModel]()
     private var articles = [Article]()
     
@@ -34,11 +36,17 @@ class NewTableViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         fetchArticles()
+        createSearchBar()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
+    }
+    
+    private func createSearchBar() {
+        navigationItem.searchController = searchController
+        searchController.searchBar.delegate = self
     }
     
     private func fetchArticles() {
@@ -54,6 +62,7 @@ class NewTableViewController: UIViewController {
                 })
                 DispatchQueue.main.async {
                     self?.tableView.reloadData()
+                    self?.searchController.dismiss(animated: true)
                 }
             case .failure(let error):
                 print(error)
@@ -63,7 +72,7 @@ class NewTableViewController: UIViewController {
 
 }
 
-extension NewTableViewController: UITableViewDelegate, UITableViewDataSource {
+extension NewsTableViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModels.count
     }
@@ -91,4 +100,28 @@ extension NewTableViewController: UITableViewDelegate, UITableViewDataSource {
         Constants.cellHeight
     }
 
+}
+
+extension NewsTableViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchKeyword = searchBar.text, !searchKeyword.isEmpty else { return }
+        APICaller.shared.search(with: searchKeyword) { [weak self] result in
+            switch result {
+            case .success(let articles):
+                self?.articles = articles
+                self?.viewModels = articles.compactMap({ articles in
+                    NewTableViewCellViewModel(
+                        title: articles.title,
+                        subtitle: articles.description ?? Constants.defaultDescription,
+                        imageURL: URL(string: articles.urlToImage ?? ""))
+                })
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                    self?.searchController.dismiss(animated: true)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }
