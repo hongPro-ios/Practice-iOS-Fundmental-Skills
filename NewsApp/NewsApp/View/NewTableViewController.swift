@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import SafariServices
 
-// TableView
-// Custom Cel
-// API Caller
-// Open 
-
-class ViewController: UIViewController {
+class NewTableViewController: UIViewController {
+    
+    struct Constants {
+        static let cellHeight: CGFloat = 150
+        static let title = "News"
+    }
     
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -24,25 +25,33 @@ class ViewController: UIViewController {
     }()
     
     private var viewModels = [NewTableViewCellViewModel]()
+    private var articles = [Article]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "News"
-        view.backgroundColor = .systemBackground
+        title = Constants.title
         view.addSubview(tableView)
         tableView.dataSource = self
         tableView.delegate = self
-        
+        fetchArticles()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        tableView.frame = view.bounds
+    }
+    
+    private func fetchArticles() {
         APICaller.shared.getTopStories { [weak self] result in
             switch result {
             case .success(let articles):
+                self?.articles = articles
                 self?.viewModels = articles.compactMap({ articles in
                     NewTableViewCellViewModel(
                         title: articles.title,
                         subtitle: articles.description ?? "No Description",
                         imageURL: URL(string: articles.urlToImage ?? ""))
                 })
-//                dump(self?.viewModels)
                 DispatchQueue.main.async {
                     self?.tableView.reloadData()
                 }
@@ -51,15 +60,10 @@ class ViewController: UIViewController {
             }
         }
     }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        tableView.frame = view.bounds
-    }
 
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension NewTableViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModels.count
     }
@@ -77,11 +81,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let article = articles[indexPath.row]
+        guard let url = URL(string: article.url ?? "") else { return }
+        let viewController = SFSafariViewController(url: url)
+        present(viewController, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        150
+        Constants.cellHeight
     }
-    
-    
+
 }
