@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 // TableView
 // Custom Cel
@@ -24,6 +25,7 @@ class ViewController: UIViewController {
     }()
     
     private var viewModels = [NewTableViewCellViewModel]()
+    private var articles = [Article]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +38,7 @@ class ViewController: UIViewController {
         APICaller.shared.getTopStories { [weak self] result in
             switch result {
             case .success(let articles):
+                self?.articles = articles
                 self?.viewModels = articles.compactMap({ articles in
                     NewTableViewCellViewModel(
                         title: articles.title,
@@ -77,6 +80,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let article = articles[indexPath.row]
+        
+        guard let url = URL(string: article.url ?? "") else { return }
+        
+        let viewController = SFSafariViewController(url: url)
+        present(viewController, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
