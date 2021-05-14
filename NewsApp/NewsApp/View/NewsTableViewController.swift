@@ -8,7 +8,7 @@
 import UIKit
 import SafariServices
 
-class NewTableViewController: UIViewController {
+class NewsTableViewController: UIViewController {
     
     struct Constants {
         static let cellHeight: CGFloat = 150
@@ -63,7 +63,7 @@ class NewTableViewController: UIViewController {
 
 }
 
-extension NewTableViewController: UITableViewDelegate, UITableViewDataSource {
+extension NewsTableViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModels.count
     }
