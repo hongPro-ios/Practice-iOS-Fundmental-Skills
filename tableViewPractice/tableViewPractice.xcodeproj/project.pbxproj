@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D007A712653F0A500448A33 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D007A702653F0A500448A33 /* APICaller.swift */; };
 		3D6D5A26263D9CDD00CB2443 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D5A25263D9CDD00CB2443 /* AppDelegate.swift */; };
 		3D6D5A28263D9CDD00CB2443 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D5A27263D9CDD00CB2443 /* SceneDelegate.swift */; };
 		3D6D5A2A263D9CDD00CB2443 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D5A29263D9CDD00CB2443 /* ViewController.swift */; };
@@ -17,11 +18,11 @@
 		3D6D5A40263DA5F300CB2443 /* CellRoundCornerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D5A3F263DA5F300CB2443 /* CellRoundCornerViewController.swift */; };
 		3D6D5A42263DA6B700CB2443 /* MoveAndDeleteCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D5A41263DA6B700CB2443 /* MoveAndDeleteCellViewController.swift */; };
 		3D6D5A44263DA6C400CB2443 /* PaginationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D5A43263DA6C400CB2443 /* PaginationViewController.swift */; };
-		3D6D5A46263DAA4600CB2443 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D5A45263DAA4500CB2443 /* APICaller.swift */; };
 		3D6D5A48263DAD8000CB2443 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D5A47263DAD8000CB2443 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D007A702653F0A500448A33 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		3D6D5A22263D9CDD00CB2443 /* tableViewPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tableViewPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D6D5A25263D9CDD00CB2443 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D6D5A27263D9CDD00CB2443 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,7 +35,6 @@
 		3D6D5A3F263DA5F300CB2443 /* CellRoundCornerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellRoundCornerViewController.swift; sourceTree = "<group>"; };
 		3D6D5A41263DA6B700CB2443 /* MoveAndDeleteCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveAndDeleteCellViewController.swift; sourceTree = "<group>"; };
 		3D6D5A43263DA6C400CB2443 /* PaginationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationViewController.swift; sourceTree = "<group>"; };
-		3D6D5A45263DAA4500CB2443 /* APICaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APICaller.swift; path = ../../../TableViewPagenation/TableViewPagenation/APICaller.swift; sourceTree = "<group>"; };
 		3D6D5A47263DAD8000CB2443 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,7 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				3D6D5A43263DA6C400CB2443 /* PaginationViewController.swift */,
-				3D6D5A45263DAA4500CB2443 /* APICaller.swift */,
+				3D007A702653F0A500448A33 /* APICaller.swift */,
 			);
 			path = TableViewPagination;
 			sourceTree = "<group>";
@@ -191,11 +191,11 @@
 				3D6D5A2A263D9CDD00CB2443 /* ViewController.swift in Sources */,
 				3D6D5A44263DA6C400CB2443 /* PaginationViewController.swift in Sources */,
 				3D6D5A40263DA5F300CB2443 /* CellRoundCornerViewController.swift in Sources */,
+				3D007A712653F0A500448A33 /* APICaller.swift in Sources */,
 				3D6D5A42263DA6B700CB2443 /* MoveAndDeleteCellViewController.swift in Sources */,
 				3D6D5A26263D9CDD00CB2443 /* AppDelegate.swift in Sources */,
 				3D6D5A28263D9CDD00CB2443 /* SceneDelegate.swift in Sources */,
 				3D6D5A3E263DA27200CB2443 /* SwipeActionViewController.swift in Sources */,
-				3D6D5A46263DAA4600CB2443 /* APICaller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

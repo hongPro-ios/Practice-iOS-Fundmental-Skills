@@ -10,14 +10,10 @@ import UIKit
 struct TableCellModel {
     let title: String
     let viewController: UIViewController
-    
 }
 
 
 class ViewController: UIViewController {
-    
-    
-    
     let practiceList = [
         TableCellModel(title: "TableViewSwipeActions", viewController: SwipeActionViewController()),
         TableCellModel(title: "TableViewCellRoundCorner", viewController: CellRoundCornerViewController()),
@@ -34,8 +30,7 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
     }
-    
-    
+
 }
 
 
