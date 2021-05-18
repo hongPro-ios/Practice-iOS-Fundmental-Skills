@@ -10,19 +10,16 @@ import UIKit
 struct TableCellModel {
     let title: String
     let viewController: UIViewController
-    
 }
 
 
 class ViewController: UIViewController {
-    
-    
-    
     let practiceList = [
         TableCellModel(title: "TableViewSwipeActions", viewController: SwipeActionViewController()),
         TableCellModel(title: "TableViewCellRoundCorner", viewController: CellRoundCornerViewController()),
         TableCellModel(title: "TableViewMoveAndDeleteCell", viewController: MoveAndDeleteCellViewController()),
         TableCellModel(title: "TableViewPagenation", viewController: PaginationViewController()),
+        TableCellModel(title: "TableViewCarouselCollectionView", viewController: CarouselCollectionTableViewController()),
     ]
     
     @IBOutlet weak var tableView: UITableView!
@@ -34,8 +31,7 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
     }
-    
-    
+
 }
 
 
