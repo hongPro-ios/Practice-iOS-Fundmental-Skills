@@ -24,22 +24,23 @@ final class DefaultSearchMoviesUseCase: SearchMoviesUseCase {
         self.moviesRepository = moviesRepository
         self.moviesQueriesRepository = moviesQueriesRepository
     }
-
-    func execute(requestValue: SearchMoviesUseCaseRequestValue,
-                 cached: @escaping (MoviesPage) -> Void,
-                 completion: @escaping (Result<MoviesPage, Error>) -> Void) -> Cancellable? {
-
-        return moviesRepository.fetchMoviesList(query: requestValue.query,
-                                                page: requestValue.page,
-                                                cached: cached,
-                                                completion: { result in
-
+    
+    func execute(
+        requestValue: SearchMoviesUseCaseRequestValue,
+        cached: @escaping (MoviesPage) -> Void,
+        completion: @escaping (Result<MoviesPage, Error>) -> Void
+    ) -> Cancellable? {
+        
+        return moviesRepository.fetchMoviesList(
+            query: requestValue.query,
+            page: requestValue.page,
+            cached: cached) { result in
             if case .success = result {
                 self.moviesQueriesRepository.saveRecentQuery(query: requestValue.query) { _ in }
             }
-
+            
             completion(result)
-        })
+        }
     }
 }
 

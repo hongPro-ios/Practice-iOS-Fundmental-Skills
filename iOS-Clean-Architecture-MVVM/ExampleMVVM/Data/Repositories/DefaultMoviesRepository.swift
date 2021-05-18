@@ -20,10 +20,13 @@ final class DefaultMoviesRepository {
 }
 
 extension DefaultMoviesRepository: MoviesRepository {
-
-    public func fetchMoviesList(query: MovieQuery, page: Int,
-                                cached: @escaping (MoviesPage) -> Void,
-                                completion: @escaping (Result<MoviesPage, Error>) -> Void) -> Cancellable? {
+    
+    public func fetchMoviesList(
+        query: MovieQuery,
+        page: Int,
+        cached: @escaping (MoviesPage) -> Void,
+        completion: @escaping (Result<MoviesPage, Error>) -> Void
+    ) -> Cancellable? {
 
         let requestDTO = MoviesRequestDTO(query: query.query, page: page)
         let task = RepositoryTask()
