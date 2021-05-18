@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3D007A712653F0A500448A33 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D007A702653F0A500448A33 /* APICaller.swift */; };
+		3D007A742653F1BC00448A33 /* CarouselCollectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D007A732653F1BC00448A33 /* CarouselCollectionTableViewController.swift */; };
+		3D007A762653F32B00448A33 /* CarouselCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D007A752653F32B00448A33 /* CarouselCollectionTableViewCell.swift */; };
+		3D007A782653F4CB00448A33 /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D007A772653F4CB00448A33 /* TitleCollectionViewCell.swift */; };
 		3D6D5A26263D9CDD00CB2443 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D5A25263D9CDD00CB2443 /* AppDelegate.swift */; };
 		3D6D5A28263D9CDD00CB2443 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D5A27263D9CDD00CB2443 /* SceneDelegate.swift */; };
 		3D6D5A2A263D9CDD00CB2443 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D5A29263D9CDD00CB2443 /* ViewController.swift */; };
@@ -23,7 +26,10 @@
 
 /* Begin PBXFileReference section */
 		3D007A702653F0A500448A33 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
-		3D6D5A22263D9CDD00CB2443 /* tableViewPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tableViewPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D007A732653F1BC00448A33 /* CarouselCollectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCollectionTableViewController.swift; sourceTree = "<group>"; };
+		3D007A752653F32B00448A33 /* CarouselCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCollectionTableViewCell.swift; sourceTree = "<group>"; };
+		3D007A772653F4CB00448A33 /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
+		3D6D5A22263D9CDD00CB2443 /* TableViewPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D6D5A25263D9CDD00CB2443 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D6D5A27263D9CDD00CB2443 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3D6D5A29263D9CDD00CB2443 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,10 +55,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D007A722653F15B00448A33 /* TableViewCarouselCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				3D007A732653F1BC00448A33 /* CarouselCollectionTableViewController.swift */,
+				3D007A752653F32B00448A33 /* CarouselCollectionTableViewCell.swift */,
+				3D007A772653F4CB00448A33 /* TitleCollectionViewCell.swift */,
+			);
+			path = TableViewCarouselCollectionView;
+			sourceTree = "<group>";
+		};
+		3D007A79265406DA00448A33 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				3D6D5A25263D9CDD00CB2443 /* AppDelegate.swift */,
+				3D6D5A27263D9CDD00CB2443 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		3D007A7A265406FD00448A33 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				3D6D5A2E263D9CDE00CB2443 /* Assets.xcassets */,
+				3D6D5A30263D9CDE00CB2443 /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		3D6D5A19263D9CDD00CB2443 = {
 			isa = PBXGroup;
 			children = (
-				3D6D5A24263D9CDD00CB2443 /* tableViewPractice */,
+				3D6D5A24263D9CDD00CB2443 /* TableViewPractice */,
 				3D6D5A23263D9CDD00CB2443 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,27 +94,26 @@
 		3D6D5A23263D9CDD00CB2443 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3D6D5A22263D9CDD00CB2443 /* tableViewPractice.app */,
+				3D6D5A22263D9CDD00CB2443 /* TableViewPractice.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3D6D5A24263D9CDD00CB2443 /* tableViewPractice */ = {
+		3D6D5A24263D9CDD00CB2443 /* TableViewPractice */ = {
 			isa = PBXGroup;
 			children = (
+				3D007A79265406DA00448A33 /* AppDelegate */,
+				3D6D5A29263D9CDD00CB2443 /* ViewController.swift */,
+				3D6D5A2B263D9CDD00CB2443 /* Main.storyboard */,
+				3D007A722653F15B00448A33 /* TableViewCarouselCollectionView */,
 				3D6D5A3C263D9D8D00CB2443 /* TableViewSwipeActions */,
 				3D6D5A3B263D9D7000CB2443 /* TableViewPagination */,
 				3D6D5A3A263D9D6200CB2443 /* TableViewMoveAndDeleteCell */,
 				3D6D5A39263D9D5600CB2443 /* TableViewCellRoundCorner */,
-				3D6D5A25263D9CDD00CB2443 /* AppDelegate.swift */,
-				3D6D5A27263D9CDD00CB2443 /* SceneDelegate.swift */,
-				3D6D5A29263D9CDD00CB2443 /* ViewController.swift */,
-				3D6D5A2B263D9CDD00CB2443 /* Main.storyboard */,
-				3D6D5A2E263D9CDE00CB2443 /* Assets.xcassets */,
-				3D6D5A30263D9CDE00CB2443 /* LaunchScreen.storyboard */,
+				3D007A7A265406FD00448A33 /* Resource */,
 				3D6D5A33263D9CDE00CB2443 /* Info.plist */,
 			);
-			path = tableViewPractice;
+			path = TableViewPractice;
 			sourceTree = "<group>";
 		};
 		3D6D5A39263D9D5600CB2443 /* TableViewCellRoundCorner */ = {
@@ -120,9 +153,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3D6D5A21263D9CDD00CB2443 /* tableViewPractice */ = {
+		3D6D5A21263D9CDD00CB2443 /* TableViewPractice */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3D6D5A36263D9CDE00CB2443 /* Build configuration list for PBXNativeTarget "tableViewPractice" */;
+			buildConfigurationList = 3D6D5A36263D9CDE00CB2443 /* Build configuration list for PBXNativeTarget "TableViewPractice" */;
 			buildPhases = (
 				3D6D5A1E263D9CDD00CB2443 /* Sources */,
 				3D6D5A1F263D9CDD00CB2443 /* Frameworks */,
@@ -132,9 +165,9 @@
 			);
 			dependencies = (
 			);
-			name = tableViewPractice;
+			name = TableViewPractice;
 			productName = tableViewPractice;
-			productReference = 3D6D5A22263D9CDD00CB2443 /* tableViewPractice.app */;
+			productReference = 3D6D5A22263D9CDD00CB2443 /* TableViewPractice.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -151,7 +184,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3D6D5A1D263D9CDD00CB2443 /* Build configuration list for PBXProject "tableViewPractice" */;
+			buildConfigurationList = 3D6D5A1D263D9CDD00CB2443 /* Build configuration list for PBXProject "TableViewPractice" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -164,7 +197,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3D6D5A21263D9CDD00CB2443 /* tableViewPractice */,
+				3D6D5A21263D9CDD00CB2443 /* TableViewPractice */,
 			);
 		};
 /* End PBXProject section */
@@ -191,9 +224,12 @@
 				3D6D5A2A263D9CDD00CB2443 /* ViewController.swift in Sources */,
 				3D6D5A44263DA6C400CB2443 /* PaginationViewController.swift in Sources */,
 				3D6D5A40263DA5F300CB2443 /* CellRoundCornerViewController.swift in Sources */,
+				3D007A742653F1BC00448A33 /* CarouselCollectionTableViewController.swift in Sources */,
 				3D007A712653F0A500448A33 /* APICaller.swift in Sources */,
+				3D007A762653F32B00448A33 /* CarouselCollectionTableViewCell.swift in Sources */,
 				3D6D5A42263DA6B700CB2443 /* MoveAndDeleteCellViewController.swift in Sources */,
 				3D6D5A26263D9CDD00CB2443 /* AppDelegate.swift in Sources */,
+				3D007A782653F4CB00448A33 /* TitleCollectionViewCell.swift in Sources */,
 				3D6D5A28263D9CDD00CB2443 /* SceneDelegate.swift in Sources */,
 				3D6D5A3E263DA27200CB2443 /* SwipeActionViewController.swift in Sources */,
 			);
@@ -378,7 +414,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3D6D5A1D263D9CDD00CB2443 /* Build configuration list for PBXProject "tableViewPractice" */ = {
+		3D6D5A1D263D9CDD00CB2443 /* Build configuration list for PBXProject "TableViewPractice" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3D6D5A34263D9CDE00CB2443 /* Debug */,
@@ -387,7 +423,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3D6D5A36263D9CDE00CB2443 /* Build configuration list for PBXNativeTarget "tableViewPractice" */ = {
+		3D6D5A36263D9CDE00CB2443 /* Build configuration list for PBXNativeTarget "TableViewPractice" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3D6D5A37263D9CDE00CB2443 /* Debug */,

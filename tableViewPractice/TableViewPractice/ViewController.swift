@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         TableCellModel(title: "TableViewCellRoundCorner", viewController: CellRoundCornerViewController()),
         TableCellModel(title: "TableViewMoveAndDeleteCell", viewController: MoveAndDeleteCellViewController()),
         TableCellModel(title: "TableViewPagenation", viewController: PaginationViewController()),
+        TableCellModel(title: "TableViewCarouselCollectionView", viewController: CarouselCollectionTableViewController()),
     ]
     
     @IBOutlet weak var tableView: UITableView!

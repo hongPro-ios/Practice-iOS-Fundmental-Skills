@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--TableViewPractice-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="tableViewPractice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TableViewPractice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,7 +49,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="F8S-1G-qK8" secondAttribute="bottom" id="f9G-3i-1g9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="gXZ-JU-dTP"/>
+                    <navigationItem key="navigationItem" title="TableViewPractice" id="gXZ-JU-dTP"/>
                     <connections>
                         <outlet property="tableView" destination="F8S-1G-qK8" id="LOs-Gm-YGT"/>
                     </connections>
@@ -63,8 +63,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dh7-9q-8RY" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="A3V-z9-hhN">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="A3V-z9-hhN">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
