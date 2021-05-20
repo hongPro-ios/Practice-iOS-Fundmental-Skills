@@ -1,13 +1,13 @@
 //
-//  UnitTestingTutorialUITests.swift
-//  UnitTestingTutorialUITests
+//  XCUITestDefaultUITests.swift
+//  XCUITestDefaultUITests
 //
-//  Created by JEONGSEOB HONG on 2021/04/28.
+//  Created by JEONGSEOB HONG on 2021/05/19.
 //
 
 import XCTest
 
-class UnitTestingTutorialUITests: XCTestCase {
+class XCUITestDefaultUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -26,14 +26,21 @@ class UnitTestingTutorialUITests: XCTestCase {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
-
-                
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+                                
+                    
+    }
+    
+    func testFirstCustom() {
+        let app = XCUIApplication()
+        app.launch()
+                                                
+        app.buttons["button4"].tap()
+        
+                                
     }
 
     func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
+        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
             // This measures how long it takes to launch your application.
             measure(metrics: [XCTApplicationLaunchMetric()]) {
                 XCUIApplication().launch()
