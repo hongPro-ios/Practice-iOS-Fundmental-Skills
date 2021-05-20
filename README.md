@@ -214,3 +214,5 @@ func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPat
     하지만 이렇게 하면 기존 코드에 thread  injection인수를 넣어줘야 하여 본 코드의 수정이 들어간다.
     이런 방법도 있다는걸 알아 두자
   - 이 후 mock으로 의존성 끊어내는 방법이 나오니 그 방법을 활용하도록!
+
+hhh
