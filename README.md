@@ -214,3 +214,11 @@ func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPat
     하지만 이렇게 하면 기존 코드에 thread  injection인수를 넣어줘야 하여 본 코드의 수정이 들어간다.
     이런 방법도 있다는걸 알아 두자
   - 이 후 mock으로 의존성 끊어내는 방법이 나오니 그 방법을 활용하도록!
+
+
+## PageControl
+확인하고자 한 부분
+1. pageControl이 어떻게 작동 되는거지?
+- pageControl이 자동으로 뷰를 이동시켜 주는것이 아니다. 스크롤뷰나 그를 상속한 뷰들과 pageControl를 연계시켜서  paging처리를 하는것이다
+- 참고: https://www.youtube.com/watch?v=EKAVB_56RIU
+- 심화: https://techlife.cookpad.com/entry/2019/08/16/090000
