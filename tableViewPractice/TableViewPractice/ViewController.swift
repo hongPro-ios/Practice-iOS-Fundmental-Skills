@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         TableCellModel(title: "TableViewMoveAndDeleteCell", viewController: MoveAndDeleteCellViewController()),
         TableCellModel(title: "TableViewPagenation", viewController: PaginationViewController()),
         TableCellModel(title: "TableViewCarouselCollectionView", viewController: CarouselCollectionTableViewController()),
+        TableCellModel(title: "TableViewHeader", viewController: HeaderViewController())
     ]
     
     @IBOutlet weak var tableView: UITableView!
