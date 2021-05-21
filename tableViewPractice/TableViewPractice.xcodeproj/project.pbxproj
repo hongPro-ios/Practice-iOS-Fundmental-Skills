@@ -11,6 +11,7 @@
 		3D007A742653F1BC00448A33 /* CarouselCollectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D007A732653F1BC00448A33 /* CarouselCollectionTableViewController.swift */; };
 		3D007A762653F32B00448A33 /* CarouselCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D007A752653F32B00448A33 /* CarouselCollectionTableViewCell.swift */; };
 		3D007A782653F4CB00448A33 /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D007A772653F4CB00448A33 /* TitleCollectionViewCell.swift */; };
+		3D3D75772657DA92005800D1 /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3D75762657DA92005800D1 /* HeaderViewController.swift */; };
 		3D6D5A26263D9CDD00CB2443 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D5A25263D9CDD00CB2443 /* AppDelegate.swift */; };
 		3D6D5A28263D9CDD00CB2443 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D5A27263D9CDD00CB2443 /* SceneDelegate.swift */; };
 		3D6D5A2A263D9CDD00CB2443 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D5A29263D9CDD00CB2443 /* ViewController.swift */; };
@@ -29,6 +30,7 @@
 		3D007A732653F1BC00448A33 /* CarouselCollectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCollectionTableViewController.swift; sourceTree = "<group>"; };
 		3D007A752653F32B00448A33 /* CarouselCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCollectionTableViewCell.swift; sourceTree = "<group>"; };
 		3D007A772653F4CB00448A33 /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
+		3D3D75762657DA92005800D1 /* HeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewController.swift; sourceTree = "<group>"; };
 		3D6D5A22263D9CDD00CB2443 /* TableViewPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D6D5A25263D9CDD00CB2443 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D6D5A27263D9CDD00CB2443 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,14 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		3D3D75752657DA34005800D1 /* TableViewHeader */ = {
+			isa = PBXGroup;
+			children = (
+				3D3D75762657DA92005800D1 /* HeaderViewController.swift */,
+			);
+			path = TableViewHeader;
+			sourceTree = "<group>";
+		};
 		3D6D5A19263D9CDD00CB2443 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +120,7 @@
 				3D6D5A3B263D9D7000CB2443 /* TableViewPagination */,
 				3D6D5A3A263D9D6200CB2443 /* TableViewMoveAndDeleteCell */,
 				3D6D5A39263D9D5600CB2443 /* TableViewCellRoundCorner */,
+				3D3D75752657DA34005800D1 /* TableViewHeader */,
 				3D007A7A265406FD00448A33 /* Resource */,
 				3D6D5A33263D9CDE00CB2443 /* Info.plist */,
 			);
@@ -229,6 +240,7 @@
 				3D007A762653F32B00448A33 /* CarouselCollectionTableViewCell.swift in Sources */,
 				3D6D5A42263DA6B700CB2443 /* MoveAndDeleteCellViewController.swift in Sources */,
 				3D6D5A26263D9CDD00CB2443 /* AppDelegate.swift in Sources */,
+				3D3D75772657DA92005800D1 /* HeaderViewController.swift in Sources */,
 				3D007A782653F4CB00448A33 /* TitleCollectionViewCell.swift in Sources */,
 				3D6D5A28263D9CDD00CB2443 /* SceneDelegate.swift in Sources */,
 				3D6D5A3E263DA27200CB2443 /* SwipeActionViewController.swift in Sources */,
@@ -404,7 +416,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hongjeongseob.tableViewPractice;
+				PRODUCT_BUNDLE_IDENTIFIER = hongjeongseob.tableViewPractic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
