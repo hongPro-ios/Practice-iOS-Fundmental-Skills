@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct MoviesListItemViewModel: Equatable {
+struct MoviesListItemModel: Equatable {
     let title: String
     let overview: String
     let releaseDate: String
     let posterImagePath: String?
 }
 
-extension MoviesListItemViewModel {
+extension MoviesListItemModel {
 
     init(movie: Movie) {
         self.title = movie.title ?? ""

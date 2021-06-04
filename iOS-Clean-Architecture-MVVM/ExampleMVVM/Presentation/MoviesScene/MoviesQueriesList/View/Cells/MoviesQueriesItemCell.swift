@@ -13,7 +13,7 @@ final class MoviesQueriesItemCell: UITableViewCell {
 
     @IBOutlet private var titleLabel: UILabel!
     
-    func fill(with suggestion: MoviesQueryListItemViewModel) {
+    func fill(with suggestion: MoviesQueryListItemModel) {
         self.titleLabel.text = suggestion.query
     }
 }
