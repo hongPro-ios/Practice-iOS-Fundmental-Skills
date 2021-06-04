@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MoviesQueryListItemViewModel {
+class MoviesQueryListItemModel {
     let query: String
 
     init(query: String) {
@@ -15,8 +15,8 @@ class MoviesQueryListItemViewModel {
     }
 }
 
-extension MoviesQueryListItemViewModel: Equatable {
-    static func == (lhs: MoviesQueryListItemViewModel, rhs: MoviesQueryListItemViewModel) -> Bool {
+extension MoviesQueryListItemModel: Equatable {
+    static func == (lhs: MoviesQueryListItemModel, rhs: MoviesQueryListItemModel) -> Bool {
         return lhs.query == rhs.query
     }
 }

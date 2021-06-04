@@ -11,11 +11,11 @@ typealias MoviesQueryListViewModelDidSelectAction = (MovieQuery) -> Void
 
 protocol MoviesQueryListViewModelInput {
     func viewWillAppear()
-    func didSelect(item: MoviesQueryListItemViewModel)
+    func didSelect(item: MoviesQueryListItemModel)
 }
 
 protocol MoviesQueryListViewModelOutput {
-    var items: Observable<[MoviesQueryListItemViewModel]> { get }
+    var items: Observable<[MoviesQueryListItemModel]> { get }
 }
 
 protocol MoviesQueryListViewModel: MoviesQueryListViewModelInput, MoviesQueryListViewModelOutput { }
@@ -32,7 +32,7 @@ final class DefaultMoviesQueryListViewModel: MoviesQueryListViewModel {
     private let didSelect: MoviesQueryListViewModelDidSelectAction?
     
     // MARK: - OUTPUT
-    let items: Observable<[MoviesQueryListItemViewModel]> = Observable([])
+    let items: Observable<[MoviesQueryListItemModel]> = Observable([])
     
     init(numberOfQueriesToShow: Int,
          fetchRecentMovieQueriesUseCaseFactory: @escaping FetchRecentMovieQueriesUseCaseFactory,
@@ -47,7 +47,7 @@ final class DefaultMoviesQueryListViewModel: MoviesQueryListViewModel {
         let completion: (FetchRecentMovieQueriesUseCase.ResultValue) -> Void = { result in
             switch result {
             case .success(let items):
-                self.items.value = items.map { $0.query }.map(MoviesQueryListItemViewModel.init)
+                self.items.value = items.map { $0.query }.map(MoviesQueryListItemModel.init)
             case .failure: break
             }
         }
@@ -63,7 +63,7 @@ extension DefaultMoviesQueryListViewModel {
         updateMoviesQueries()
     }
     
-    func didSelect(item: MoviesQueryListItemViewModel) {
+    func didSelect(item: MoviesQueryListItemModel) {
         didSelect?(MovieQuery(query: item.query))
     }
 }
