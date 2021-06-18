@@ -23,11 +23,22 @@
 import UIKit
 
 class LongPressGestureViewController: UIViewController {
-   
-   @IBOutlet weak var blurView: UIVisualEffectView!
-   
- 
-   
-   
-   
+    
+    @IBOutlet weak var blurView: UIVisualEffectView!
+    
+    
+    
+    @IBAction func handleLongPressGesture(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == .began {
+            blurView.isHidden = true
+        } else if sender.state != .changed {
+            blurView.isHidden = false
+        }
+
+//        } else if sender.state == .ended {
+//            blurView.isHidden = false
+//        }
+    }
+    
+    
 }
