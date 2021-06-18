@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TD5-U0-eGc">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TD5-U0-eGc">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,14 +24,17 @@
                                     <constraint firstAttribute="height" constant="100" id="Urb-V0-wP8"/>
                                     <constraint firstAttribute="width" constant="100" id="fiz-yY-mkn"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="2Pi-aO-tl0" appends="YES" id="kmk-UI-Nr1"/>
+                                </connections>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="SUy-OA-nl8"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="HFf-sb-pNi" firstAttribute="centerY" secondItem="fRt-r8-sI7" secondAttribute="centerY" id="W1b-by-Wyf"/>
                             <constraint firstItem="HFf-sb-pNi" firstAttribute="centerX" secondItem="fRt-r8-sI7" secondAttribute="centerX" id="etO-ij-oMw"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="SUy-OA-nl8"/>
                     </view>
                     <navigationItem key="navigationItem" title="Pan Gesture" id="UfB-ro-7pT"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -42,6 +43,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZHT-5U-NX2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="2Pi-aO-tl0">
+                    <connections>
+                        <action selector="handlePanGesture:" destination="TD5-U0-eGc" id="MaE-Fb-8mM"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1800.0000000000002" y="301.33928571428572"/>
         </scene>

@@ -34,4 +34,16 @@ class PanGestureViewController: UIViewController {
       redView.layer.cornerRadius = 50
       redView.clipsToBounds = true
    }
+    
+    @IBAction func handlePanGesture(_ sender: UIPanGestureRecognizer) {
+        
+        guard let targetView = sender.view else { return }
+        
+        let translation = sender.translation(in: view) //root view내에서 얼마나 이동했는지 알 수 있다.
+        
+        targetView.center.x += translation.x
+        targetView.center.y += translation.y
+        
+        sender.setTranslation(.zero, in: view) // 중요
+    }
 }
