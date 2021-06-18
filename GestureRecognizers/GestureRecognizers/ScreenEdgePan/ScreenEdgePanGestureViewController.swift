@@ -23,18 +23,36 @@
 import UIKit
 
 class ScreenEdgePanGestureViewController: UIViewController {
-   
-   @IBOutlet weak var containerView: UIView!
-   @IBOutlet weak var redView: UIView!
-   @IBOutlet weak var blueView: UIView!
-   
-   
-   
-   override func viewDidLoad() {
-      super.viewDidLoad()
-      
-      redView.isHidden = true
-      blueView.isHidden = false
-   }
-   
+    
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var redView: UIView!
+    @IBOutlet weak var blueView: UIView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        redView.isHidden = true
+        blueView.isHidden = false
+        
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+    }
+    
+    @IBAction func handleScreenEdgePan(_ sender: UIScreenEdgePanGestureRecognizer) {
+        if sender.state == .ended {
+            UIView.transition(
+                with: containerView,
+                duration: 1,
+                options: [.transitionFlipFromRight],
+                animations: {
+                    self.redView.isHidden = !self.redView.isHidden
+                    self.blueView.isHidden = !self.blueView.isHidden
+                },
+                completion: nil)
+        }
+    }
+    
+    override var preferredScreenEdgesDeferringSystemGestures: UIRectEdge {
+        return UIRectEdge.all // 이렇게 설정하면 커스텀한 screen edge pan 이 우선으로 된다
+    }
+    
 }
