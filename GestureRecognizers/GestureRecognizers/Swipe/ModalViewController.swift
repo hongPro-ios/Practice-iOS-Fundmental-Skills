@@ -23,9 +23,14 @@
 import UIKit
 
 class ModalViewController: UIViewController {
-   
-  
-   
-  
-   
+    
+    @IBAction func handleSwipeGesture(_ sender: UISwipeGestureRecognizer) {
+        
+        if sender.state == .ended {
+            dismiss(animated: true, completion: nil)
+        }
+        
+    }
+    
+    
 }
