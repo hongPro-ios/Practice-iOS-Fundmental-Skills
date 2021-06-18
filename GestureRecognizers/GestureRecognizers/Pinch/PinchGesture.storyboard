@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K3L-WD-XNP">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K3L-WD-XNP">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,11 +16,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic" translatesAutoresizingMaskIntoConstraints="NO" id="l7n-Zq-WoU">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic" translatesAutoresizingMaskIntoConstraints="NO" id="l7n-Zq-WoU">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Ipm-X3-jG4" appends="YES" id="N6l-7S-xcO"/>
+                                </connections>
                             </imageView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="qcz-In-2km"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="l7n-Zq-WoU" firstAttribute="leading" secondItem="qcz-In-2km" secondAttribute="leading" id="K7H-17-K9o"/>
@@ -30,7 +32,6 @@
                             <constraint firstAttribute="bottom" secondItem="l7n-Zq-WoU" secondAttribute="bottom" id="pPK-HQ-dVT"/>
                             <constraint firstItem="l7n-Zq-WoU" firstAttribute="top" secondItem="1D4-nH-qaX" secondAttribute="top" id="zwM-qa-gBe"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="qcz-In-2km"/>
                     </view>
                     <navigationItem key="navigationItem" title="Pinch Gesture" id="uc6-a6-sFP">
                         <barButtonItem key="rightBarButtonItem" title="Reset" id="E6L-Bv-3XM">
@@ -45,6 +46,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FGo-Tz-0Gn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="Ipm-X3-jG4">
+                    <connections>
+                        <action selector="handlePinch:" destination="K3L-WD-XNP" id="YGS-7S-kME"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1828.985507246377" y="217.63392857142856"/>
         </scene>
