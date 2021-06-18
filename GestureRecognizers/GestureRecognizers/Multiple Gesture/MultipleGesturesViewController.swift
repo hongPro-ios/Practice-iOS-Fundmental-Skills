@@ -23,30 +23,53 @@
 import UIKit
 
 class MultipleGesturesViewController: UIViewController {
-   
-   @IBOutlet var pinchGesture: UIPinchGestureRecognizer!
-   
-   @IBOutlet var rotationGesture: UIRotationGestureRecognizer!
-   
-   @IBAction func handleRotationGesture(_ sender: UIRotationGestureRecognizer) {
-      guard let targetView = sender.view else { return }
-      
-      targetView.transform =  targetView.transform.rotated(by: sender.rotation)
-      sender.rotation = 0
-   }
-   
-   @IBAction func handlePinchGesture(_ sender: UIPinchGestureRecognizer) {
-      guard let targetView = sender.view else { return }
-      
-      targetView.transform = targetView.transform.scaledBy(x: sender.scale, y: sender.scale)
-      sender.scale = 1
-   }
-   
-   
-   override func viewDidLoad() {
-      super.viewDidLoad()
-      
-      
-   }
+    
+    @IBOutlet var pinchGesture: UIPinchGestureRecognizer!
+    
+    @IBOutlet var rotationGesture: UIRotationGestureRecognizer!
+    
+    @IBAction func handleRotationGesture(_ sender: UIRotationGestureRecognizer) {
+        guard let targetView = sender.view else { return }
+        
+        targetView.transform =  targetView.transform.rotated(by: sender.rotation)
+        sender.rotation = 0
+    }
+    
+    @IBAction func handlePinchGesture(_ sender: UIPinchGestureRecognizer) {
+        guard let targetView = sender.view else { return }
+        
+        targetView.transform = targetView.transform.scaledBy(x: sender.scale, y: sender.scale)
+        sender.scale = 1
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //        pinchGesture.require(toFail: rotationGesture)
+        
+        pinchGesture.delegate = self
+        rotationGesture.delegate = self
+        
+    }
+}
+
+extension MultipleGesturesViewController: UIGestureRecognizerDelegate {
+    //    func gestureRecognizer(
+    //        _ gestureRecognizer: UIGestureRecognizer,
+    //        shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    //        if gestureRecognizer == pinchGesture && otherGestureRecognizer == rotationGesture {
+    //            return true
+    //        }
+    //
+    //        return false
+    //    }
+    
+    func gestureRecognizer(
+        _ gestureRecognizer: UIGestureRecognizer,
+        shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+    
 }
 
