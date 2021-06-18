@@ -23,18 +23,28 @@
 import UIKit
 
 class RotationGestureViewController: UIViewController {
-   
-   @IBOutlet weak var imageView: UIImageView!
-   
-   
-   
-   @IBAction func reset(_ sender: Any) {
-      
-   }
-   
-   override func viewDidLoad() {
-      super.viewDidLoad()
-      
-      
-   }
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
+    
+    
+    @IBAction func reset(_ sender: Any) {
+        UIView.animate(withDuration: 0.3) {
+            self.imageView.transform = CGAffineTransform.identity
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        imageView.isUserInteractionEnabled = true
+        
+        
+    }
+    @IBAction func handleRotation(_ sender: UIRotationGestureRecognizer) {
+        guard let targetView = sender.view else { return }
+        
+        targetView.transform = targetView.transform.rotated(by: sender.rotation)
+        sender.rotation = 0
+    }
 }
