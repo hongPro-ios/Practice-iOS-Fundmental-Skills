@@ -17,15 +17,16 @@ final class MoviesSceneDIContainer {
     
     private let dependencies: Dependencies
     
-    // MARK: - Persistent Storage
+    // MARK: - Persistent Storage  생각: 이것도 realm으로 바꿀 수 있도록 DataTransferService 방식으로 바꾸고 외부로 빼는게 좋을것 같다.
     lazy var moviesQueriesStorage: MoviesQueriesStorage = CoreDataMoviesQueriesStorage(maxStorageLimit: 10)
     lazy var moviesResponseCache: MoviesResponseStorage = CoreDataMoviesResponseStorage()
     
+    // MARK: - init
     init(dependencies: Dependencies) {
         self.dependencies = dependencies        
     }
     
-    // MARK: - Use Cases
+    // MARK: - UseCases
     func makeSearchMoviesUseCase() -> SearchMoviesUseCase {
         return DefaultSearchMoviesUseCase(
             moviesRepository: makeMoviesRepository(),
@@ -43,22 +44,26 @@ final class MoviesSceneDIContainer {
         )
     }
     
-    // MARK: - Repositories
+    // MARK: - Data > Repositories
     func makeMoviesRepository() -> MoviesRepository {
         return DefaultMoviesRepository(
             dataTransferService: dependencies.apiDataTransferService,
             cache: moviesResponseCache)
     }
+    
     func makeMoviesQueriesRepository() -> MoviesQueriesRepository {
         return DefaultMoviesQueriesRepository(
             dataTransferService: dependencies.apiDataTransferService,
             moviesQueriesPersistentStorage: moviesQueriesStorage)
     }
+    
     func makePosterImagesRepository() -> PosterImagesRepository {
         return DefaultPosterImagesRepository(dataTransferService: dependencies.imageDataTransferService)
     }
-    
-    // MARK: - Movies List
+}
+
+extension MoviesSceneDIContainer: MoviesSearchFlowCoordinatorDependencies {
+    // MARK: - Present > Movies List
     func makeMoviesListViewController(actions: MoviesListViewModelActions) -> MoviesListViewController {
         return MoviesListViewController.create(
             with: makeMoviesListViewModel(actions: actions),
@@ -71,42 +76,34 @@ final class MoviesSceneDIContainer {
             actions: actions)
     }
     
-    // MARK: - Movie Details
+    // MARK: - Present > Movie Details
     func makeMoviesDetailsViewController(movie: Movie) -> UIViewController {
         return MovieDetailsViewController.create(with: makeMoviesDetailsViewModel(movie: movie))
     }
     
     func makeMoviesDetailsViewModel(movie: Movie) -> MovieDetailsViewModel {
-        return DefaultMovieDetailsViewModel(movie: movie,
-                                            posterImagesRepository: makePosterImagesRepository())
+        return DefaultMovieDetailsViewModel(
+            movie: movie,
+            posterImagesRepository: makePosterImagesRepository())
     }
     
-    // MARK: - Movies Queries Suggestions List
+    // MARK: - Present > Movies Queries Suggestions List
     func makeMoviesQueriesSuggestionsListViewController(didSelect: @escaping MoviesQueryListViewModelDidSelectAction) -> UIViewController {
-        if #available(iOS 13.0, *) { // SwiftUI
-            let view = MoviesQueryListView(viewModelWrapper: makeMoviesQueryListViewModelWrapper(didSelect: didSelect))
-            return UIHostingController(rootView: view)
-        } else { // UIKit
-            return MoviesQueriesTableViewController.create(with: makeMoviesQueryListViewModel(didSelect: didSelect))
-        }
+        return MoviesQueriesTableViewController.create(with: makeMoviesQueryListViewModel(didSelect: didSelect))
     }
     
     func makeMoviesQueryListViewModel(didSelect: @escaping MoviesQueryListViewModelDidSelectAction) -> MoviesQueryListViewModel {
-        return DefaultMoviesQueryListViewModel(numberOfQueriesToShow: 10,
-                                               fetchRecentMovieQueriesUseCaseFactory: makeFetchRecentMovieQueriesUseCase,
-                                               didSelect: didSelect)
-    }
-    
-    @available(iOS 13.0, *)
-    func makeMoviesQueryListViewModelWrapper(didSelect: @escaping MoviesQueryListViewModelDidSelectAction) -> MoviesQueryListViewModelWrapper {
-        return MoviesQueryListViewModelWrapper(viewModel: makeMoviesQueryListViewModel(didSelect: didSelect))
+        return DefaultMoviesQueryListViewModel(
+            numberOfQueriesToShow: 10,
+            fetchRecentMovieQueriesUseCaseFactory: makeFetchRecentMovieQueriesUseCase,
+            didSelect: didSelect)
     }
     
     // MARK: - Flow Coordinators
     func makeMoviesSearchFlowCoordinator(navigationController: UINavigationController) -> MoviesSearchFlowCoordinator {
-        return MoviesSearchFlowCoordinator(navigationController: navigationController,
-                                           dependencies: self)
+        return MoviesSearchFlowCoordinator(
+            navigationController: navigationController,
+            dependencies: self)
     }
+    
 }
-
-extension MoviesSceneDIContainer: MoviesSearchFlowCoordinatorDependencies {}
