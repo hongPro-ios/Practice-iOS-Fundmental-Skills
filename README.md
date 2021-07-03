@@ -222,3 +222,9 @@ func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPat
 - pageControl이 자동으로 뷰를 이동시켜 주는것이 아니다. 스크롤뷰나 그를 상속한 뷰들과 pageControl를 연계시켜서  paging처리를 하는것이다
 - 참고: https://www.youtube.com/watch?v=EKAVB_56RIU
 - 심화: https://techlife.cookpad.com/entry/2019/08/16/090000
+
+## Generic & Reusable API Calls
+확인하고자 한 부분
+1. 재사용성을 높이기 위해  Generic을 어떻게 적용시키는가?
+ - 
+ - 참고: https://www.youtube.com/watch?v=Ot_fk9LZxEk
