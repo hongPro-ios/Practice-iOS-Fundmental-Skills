@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "CHTCollectionViewWaterfallLayout",
+        "repositoryURL": "https://github.com/chiahsien/CHTCollectionViewWaterfallLayout",
+        "state": {
+          "branch": null,
+          "revision": "6353ec8305870da3c43b3bd2fa27d79119f4c60b",
+          "version": "0.9.8"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
