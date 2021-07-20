@@ -228,3 +228,7 @@ func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPat
 1. 재사용성을 높이기 위해  Generic을 어떻게 적용시키는가?
  - 
  - 참고: https://www.youtube.com/watch?v=Ot_fk9LZxEk
+
+## CHTCollectionViewWaterfallLayout
+확인하고자 한 부분
+1. CHTCollectionViewWaterfallLayout  third party library를 이용하여 waterFallLayout  형식의 collectionView 만들기
